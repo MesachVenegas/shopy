@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Amiko';
+  src: url('/fonts/Amiko-Regular.ttf');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Amiko';
+  src: url('/fonts/Amiko-Medium.ttf');
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Amiko';
+  src: url('/fonts/Amiko-Bold.ttf');
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --background: #e5e7eb;
+  --foreground: #131820;
+  --foreground-lila: #C0B3E8;
+  --lila: #675A8E;
+  --neon-lila: #A852FF;
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #131820;
+    --foreground: #e5e7eb;
+    --lila: #4C1C72;
+    --foreground-lila: #675A8E;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+@layer components {
+  .title-xl { @apply text-heading-xl font-heading-xl; }
+  .title-l { @apply text-heading-l font-heading-l; }
+  .title-m { @apply text-heading-m font-heading-m; }
+  .title-s { @apply text-heading-s font-heading-s; }
+  .title-xs { @apply text-heading-xs font-heading-xs; }
+  .body-l { @apply text-body-l font-body-l; }
+  .body-m { @apply text-body-m font-body-m; }
+  .body-s { @apply text-body-s font-body-s; }
+  .label-l { @apply text-label-l font-label-l; }
+  .label-m { @apply text-label-m font-label-m; }
+  .label-s { @apply text-label-s font-label-s; }
+}
+
+.marquee {
+  animation: scroll 10s linear infinite;
+  white-space: nowrap;
+}
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
